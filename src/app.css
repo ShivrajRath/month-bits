@@ -1,0 +1,85 @@
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --brand: #2196f3;
+  --primary: #fff;
+  --secondary: #000;
+  --tertiary: #ddd;
+  --medium: 1.25rem;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  background: var(--primary);
+  color: var(--secondary);
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3rem;
+  -webkit-box-shadow: 0 4px 12px 0 var(--tertiary);
+          box-shadow: 0 4px 12px 0 var(--tertiary);
+  font-size: var(--medium);
+  color: var(--brand);
+}
+
+.wrapper {
+  margin: 0 1.5rem;
+  display: -ms-grid;
+  display: grid;
+}
+
+article {
+  place-self: center;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(10rem, auto) (1fr)[31];
+      grid-template-columns: minmax(10rem, auto) repeat(31, 1fr);
+}
+
+.grid > div {
+  padding: 0.5rem;
+  -webkit-box-shadow: 0 0 0 0.15px var(--secondary);
+          box-shadow: 0 0 0 0.15px var(--secondary);
+  background-clip: content-box;
+  background-color: var(--primary);
+}
+
+.grid .datetask {
+  cursor: pointer;
+}
+
+.grid .datetask:focus {
+  border: 0.5px solid var(--brand);
+}
+
+.add-task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem;
+}
+/*# sourceMappingURL=app.css.map */
