@@ -20,6 +20,10 @@ body {
   color: var(--secondary);
 }
 
+.bold {
+  font-weight: bold;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -42,17 +46,24 @@ article {
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(10rem, auto) repeat(31, 1fr);
+  grid-template-columns: 10rem repeat(31, 1fr);
   > div {
     padding: 0.5rem;
     box-shadow: 0 0 0 0.15px var(--secondary);
-    background-clip: content-box;
-    background-color: var(--primary);
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
   }
   .datetask {
+    padding: 0 0.5rem;
     cursor: pointer;
+    justify-content: center;
     &:focus {
       border: 0.5px solid var(--brand);
+    }
+    &[aria-checked="true"]:after {
+      content: " \25CF";
+      font-size: 2rem;
     }
   }
 }

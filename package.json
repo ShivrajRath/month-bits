@@ -1,7 +1,7 @@
 {
-  "name": "monthbits",
+  "name": "month-bits",
   "version": "1.0.0",
-  "description": "A monthly habit tracking app without any distraction",
+  "description": "A free, simple, low key monthly habit tracker without any distraction. Made with vanilla MVC.",
   "main": "src/App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

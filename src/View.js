@@ -9,7 +9,9 @@ export default class View {
     const dates = this.collection.getDates();
     const container = Utils.qs("#container");
 
-    Utils.appendTextEl(container, "Tasks");
+    Utils.appendTextEl(container, "Tasks", {
+      class: "bold",
+    });
 
     for (const { day } of dates) {
       Utils.appendTextEl(container, day);
@@ -31,7 +33,7 @@ export default class View {
           class: "datetask",
           tabIndex: "0",
           role: "checkbox",
-          style: `background-color: ${isTaskComplete ? color : "#fff"}`,
+          style: `color: ${isTaskComplete ? color : "#fff"}`,
           "aria-checked": isTaskComplete,
           "aria-label": `${name} for Day ${day}`,
         });
