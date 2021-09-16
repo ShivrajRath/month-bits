@@ -9,7 +9,7 @@ export default class View {
     const dates = this.collection.getDates();
     const container = Utils.qs("#container");
 
-    Utils.appendTextEl(container, "Tasks", {
+    Utils.appendTextEl(container, "Habits", {
       class: "bold",
     });
 
@@ -23,7 +23,14 @@ export default class View {
     const dates = this.collection.getDates();
     const container = Utils.qs("#container");
     for (const { name, id, color } of tasks) {
-      Utils.appendTextEl(container, name);
+      const taskEl = Utils.appendTextEl(container, name, {
+        style: `color: ${color}`,
+        class: "task",
+        taskId: `${id}`,
+      });
+      Utils.appendTextEl(taskEl, "x", {
+        class: "delete-task hide-print",
+      });
       for (const date of dates) {
         const { day } = date;
         const isTaskComplete = !!date[id];

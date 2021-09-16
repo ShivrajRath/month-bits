@@ -19,20 +19,25 @@
     <b>#month-bits</b>
   </header>
   <div class="wrapper">
-    <article>
+    <article class="hide-print">
       A simple and free monthly habit tool without any need of logins, no tracking, completely private. Print this page
       to work offline.
     </article>
     <main>
       <div class="grid" id="container">
-        <div>Tasks</div>
       </div>
-      <div class="add-task">
-        <input type="text" name="add-a-task">
-        <input type="button" value="Add Task" id="add-a-task">
+      <div class="cta-section hide-print">
+        <input type="text" name="add-a-task" placeholder="Name for the habit">
+        <a href="" id="add-a-task">Add a new habit</a>
+        <a href="" id="clear">Clear all entries</a>
+        <a href="" id="reset">Reset all entries</a>
       </div>
+      <footer>
+        <a href="https://github.com/ShivrajRath/month-bits" target="_blank">Github</a>
+        <a href="https://novicelab.org/" target="_blank">NoviceLab.org</a>
+        <a href="https://www.buymeacoffee.com/rath" target="_blank">Buy me a coffee</a>
+      </footer>
     </main>
-    <footer></footer>
   </div>
   <script src="dist/bundle.js"></script>
 </body>

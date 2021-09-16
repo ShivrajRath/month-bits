@@ -9,7 +9,7 @@ export default class App {
     this.store = new Store(CONSTANTS.storeName);
     this.collection = new Collection(this.store);
     this.view = new View(this.collection);
-    this.conroller = new Controller(this.view, this.collection);
+    this.controller = new Controller(this.view, this.collection);
   }
 }
 

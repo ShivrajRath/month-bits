@@ -39,6 +39,27 @@ export default class Collection {
     }
   };
 
+  /**
+   * Clears all the task entries from the date
+   */
+  clear = () => {
+    for (const date of this.getDates()) {
+      for (const [key] of Object.entries(date)) {
+        if (key.startsWith("tsk")) {
+          date[key] = false;
+        }
+      }
+    }
+  };
+
+  removeTask = (taskId) => {
+    this.#tasks = this.getTasks().filter((task) => task.id !== taskId);
+  };
+
+  reset = () => {
+    this.store.clear();
+  };
+
   getDates = () => this.#dates;
   getTasks = () => this.#tasks;
 

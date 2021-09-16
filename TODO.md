@@ -8,13 +8,16 @@
 4. Clear button to clear entries
 5. Print View
 6. Mobile View
+7. Cleaner way to add habits and clear habits instead of buttons
+8. Deletion of task, needs to reset everything
 
-## Webpack:
+## Build:
 
 1. Source map generation for dev
 2. Sass compiler
 3. HTML minifier
 4. Inject inline CSS
+5. Eslint
 
 ## Others
 

@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 1.25;
 }
 
 :root {
@@ -24,6 +25,11 @@ body {
   font-weight: bold;
 }
 
+a {
+  color: var(--secondary);
+  text-underline-position: under;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -41,18 +47,24 @@ header {
 
 article {
   place-self: center;
-  margin-bottom: 1rem;
+  margin: 2rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 10rem repeat(31, 1fr);
+  border: 0.5px solid var(--secondary);
   > div {
     padding: 0.5rem;
-    box-shadow: 0 0 0 0.15px var(--secondary);
-    min-height: 2rem;
+    border: 0.5px solid var(--secondary);
+    min-height: 2.5rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+  .delete-task {
+    color: var(--secondary);
+    cursor: pointer;
   }
   .datetask {
     padding: 0 0.5rem;
@@ -63,13 +75,53 @@ article {
     }
     &[aria-checked="true"]:after {
       content: " \25CF";
-      font-size: 2rem;
+      font-size: 30px;
     }
   }
 }
 
-.add-task {
+.cta-section {
   display: flex;
-  justify-content: center;
-  margin: 1rem;
+  margin: 1rem 0 2rem 0;
+  input {
+    width: 10rem;
+    margin-right: 0.25rem;
+  }
+  * {
+    margin-right: 2rem;
+  }
+  a {
+    text-decoration: none;
+    padding: 0 2px;
+    border: 1px solid var(--secondary);
+  }
+}
+
+input[type="button"] {
+  margin: 0 1rem;
+  padding: 0.5rem;
+  background-color: var(--brand);
+  color: var(--primary);
+}
+
+footer {
+  margin: 1rem 0;
+  border-top: 1px solid var(--secondary);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem;
+  grid-column-gap: 1rem;
+  justify-items: center;
+  font-size: 0.825rem;
+}
+
+@media print {
+  .hide-print {
+    display: none;
+  }
+  footer {
+    a::after {
+      content: "  (" attr(href) ")";
+    }
+  }
 }

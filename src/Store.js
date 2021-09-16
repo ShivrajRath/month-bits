@@ -14,4 +14,8 @@ export default class Store {
   getDates() {
     return JSON.parse(localStorage.getItem(`${this.name}-dates`) || "[]");
   }
+  clear() {
+    this.storeDates();
+    this.storeTasks();
+  }
 }

@@ -5,30 +5,50 @@ export default class Controller {
     this.view = view;
     this.collection = collection;
     this.render();
+    this.initOneTimeListeners();
+  }
+
+  initOneTimeListeners() {
+    this.initAddTaskListener();
+    this.initClearListener();
+    this.initResetListener();
   }
 
   initListeners() {
-    this.initAddTaskListener();
     this.initDateTaskClickListener();
+    this.initDeleteTaskListener();
   }
 
   initAddTaskListener() {
     const target = Utils.qs("#add-a-task");
-    const parent = target.parentNode;
-    const cloneTarget = target.cloneNode(true);
-    parent.appendChild(cloneTarget);
-
-    target.remove();
 
     const handler = (e) => {
       e.preventDefault();
-      const textBox = cloneTarget.previousElementSibling;
+      const textBox = target.previousElementSibling;
       this.collection.addTask(textBox.value);
       textBox.value = "";
       this.render();
     };
 
-    Utils.$on(cloneTarget, "click", handler);
+    Utils.$on(target, "click", handler);
+  }
+
+  initClearListener() {
+    const target = Utils.qs("#clear");
+    Utils.$on(target, "click", (e) => {
+      e.preventDefault();
+      this.collection.clear();
+      this.render();
+    });
+  }
+
+  initResetListener() {
+    const target = Utils.qs("#reset");
+    Utils.$on(target, "click", (e) => {
+      e.preventDefault();
+      this.collection.reset();
+      window.location.reload();
+    });
   }
 
   initDateTaskClickListener() {
@@ -40,6 +60,19 @@ export default class Controller {
         const day = parseInt(target.getAttribute("day"), 10);
         const taskId = target.getAttribute("taskId");
         this.collection.getDate(day).toggleTaskStatus(taskId);
+        this.render();
+      });
+    });
+  }
+
+  initDeleteTaskListener() {
+    const tasks = Utils.qsAll(".delete-task");
+    Array.from(tasks).forEach((el) => {
+      Utils.$on(el, "click", (e) => {
+        e.preventDefault();
+        const { target } = e;
+        const taskId = target.parentNode.getAttribute("taskId");
+        this.collection.removeTask(taskId);
         this.render();
       });
     });

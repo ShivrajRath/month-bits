@@ -4,6 +4,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  line-height: 1.25;
 }
 
 :root {
@@ -24,6 +25,11 @@ body {
 
 .bold {
   font-weight: bold;
+}
+
+a {
+  color: var(--secondary);
+  text-underline-position: under;
 }
 
 header {
@@ -51,7 +57,7 @@ header {
 
 article {
   place-self: center;
-  margin-bottom: 1rem;
+  margin: 2rem;
 }
 
 .grid {
@@ -59,19 +65,27 @@ article {
   display: grid;
   -ms-grid-columns: 10rem (1fr)[31];
       grid-template-columns: 10rem repeat(31, 1fr);
+  border: 0.5px solid var(--secondary);
 }
 
 .grid > div {
   padding: 0.5rem;
-  -webkit-box-shadow: 0 0 0 0.15px var(--secondary);
-          box-shadow: 0 0 0 0.15px var(--secondary);
-  min-height: 2rem;
+  border: 0.5px solid var(--secondary);
+  min-height: 2.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.grid .delete-task {
+  color: var(--secondary);
+  cursor: pointer;
 }
 
 .grid .datetask {
@@ -88,16 +102,57 @@ article {
 
 .grid .datetask[aria-checked="true"]:after {
   content: " \25CF";
-  font-size: 2rem;
+  font-size: 30px;
 }
 
-.add-task {
+.cta-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 1rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.cta-section input {
+  width: 10rem;
+  margin-right: 0.25rem;
+}
+
+.cta-section * {
+  margin-right: 2rem;
+}
+
+.cta-section a {
+  text-decoration: none;
+  padding: 0 2px;
+  border: 1px solid var(--secondary);
+}
+
+input[type="button"] {
+  margin: 0 1rem;
+  padding: 0.5rem;
+  background-color: var(--brand);
+  color: var(--primary);
+}
+
+footer {
+  margin: 1rem 0;
+  border-top: 1px solid var(--secondary);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  padding: 1rem;
+  grid-column-gap: 1rem;
+  justify-items: center;
+  font-size: 0.825rem;
+}
+
+@media print {
+  .hide-print {
+    display: none;
+  }
+  footer a::after {
+    content: "  (" attr(href) ")";
+  }
 }
 /*# sourceMappingURL=app.css.map */

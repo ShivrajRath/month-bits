@@ -56,4 +56,12 @@ export default class Utils {
   static $off(target, type, callback, capture) {
     target.removeEventListener(type, callback, capture);
   }
+
+  static getRandomColor() {
+    let color = "#";
+    for (var i = 0; i < 6; i++) {
+      color += Math.floor(Math.random() * 10);
+    }
+    return color;
+  }
 }
