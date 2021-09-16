@@ -54,6 +54,9 @@ export default class Collection {
 
   removeTask = (taskId) => {
     this.#tasks = this.getTasks().filter((task) => task.id !== taskId);
+    for (const date of this.getDates()) {
+      delete date[taskId];
+    }
   };
 
   reset = () => {

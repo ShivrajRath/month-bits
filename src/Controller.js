@@ -21,15 +21,16 @@ export default class Controller {
 
   initAddTaskListener() {
     const target = Utils.qs("#add-a-task");
+    const textBox = Utils.qs("#add-a-task-input");
 
     const handler = (e) => {
       e.preventDefault();
-      const textBox = target.previousElementSibling;
       this.collection.addTask(textBox.value);
       textBox.value = "";
       this.render();
     };
 
+    Utils.$onEnter(textBox, handler);
     Utils.$on(target, "click", handler);
   }
 

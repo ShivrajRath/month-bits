@@ -6,7 +6,6 @@ export default class Date {
     this.id = `dt${Date.count++}`;
     this.day = Date.count;
     if (Utils.isEmpty(date)) {
-      this.complete = false;
       this.notes = "";
     } else {
       for (const [key, value] of Object.entries(date)) {
@@ -17,13 +16,5 @@ export default class Date {
 
   toggleTaskStatus = (taskid) => {
     this[taskid] = !this[taskid];
-  };
-
-  markInComplete = () => {
-    this.complete = false;
-  };
-
-  markComplete = () => {
-    this.complete = true;
   };
 }

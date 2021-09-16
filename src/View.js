@@ -30,6 +30,8 @@ export default class View {
       });
       Utils.appendTextEl(taskEl, "x", {
         class: "delete-task hide-print",
+        tabIndex: "0",
+        "aria-label": `delete ${name}`,
       });
       for (const date of dates) {
         const { day } = date;

@@ -54,7 +54,23 @@ export default class Utils {
    * @param {boolean} [capture] Capture the event
    */
   static $off(target, type, callback, capture) {
-    target.removeEventListener(type, callback, capture);
+    target.removeEventListener(type, callback, !!capture);
+  }
+
+  /**
+   * addEventListener wrapper
+   *
+   * @param {Element|Window} target Target Element
+   * @param {string} type Event name to bind to
+   * @param {Function} callback Event callback
+   * @param {boolean} [capture] Capture the event
+   */
+  static $onEnter(target, callback, capture) {
+    target.addEventListener(
+      "keypress",
+      (e) => e.key === "Enter" && callback(e),
+      !!capture
+    );
   }
 
   static getRandomColor() {
