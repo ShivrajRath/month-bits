@@ -61,6 +61,11 @@ header {
       align-content: flex-start;
 }
 
+main {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
 article {
   -ms-grid-column-align: center;
       justify-self: center;
