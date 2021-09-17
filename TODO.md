@@ -2,9 +2,7 @@
 
 ## Features
 
-- Mobile View
 - Give max-width to wrapper
-- SEO content
 
 ## Build:
 
@@ -21,9 +19,3 @@
 ## CI/CD
 
 1. Github actions
-
-## Code
-
-Use ES6 Proxy for collection change monitoring
-
-## Future
