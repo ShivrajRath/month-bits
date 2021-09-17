@@ -14,5 +14,5 @@ export default class App {
 }
 
 ((window) => {
-  window["app"] = new App();
+  new App();
 })(window);

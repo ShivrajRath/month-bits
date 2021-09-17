@@ -7,7 +7,13 @@ export default class Utils {
    * @param {string} query query string
    */
   static qs = (query) => document.querySelector(query);
+
+  /**
+   * Shorthand for query selector all
+   * @param {string} query query string
+   */
   static qsAll = (query) => document.querySelectorAll(query);
+
   /**
    * Checks if the argument is empty (0, '', {}, [])
    * @param {Any} el
@@ -20,10 +26,17 @@ export default class Utils {
     (Array.isArray(el) && el.length === 0) ||
     (typeof el === "object" && Object.keys(el).length === 0);
 
-  static appendTextEl = (parent, text, options = {}) => {
+  /**
+   * Creates a div with options and appends to container
+   * @param {Node} parent parentElement
+   * @param {string} text Text to be displayed
+   * @param {object} attributes Attributes to be set to the element
+   * @returns new element
+   */
+  static appendTextEl = (parent, text, attributes = {}) => {
     const el = document.createElement("div");
     el.innerHTML = text;
-    for (let item of Object.entries(options)) {
+    for (let item of Object.entries(attributes)) {
       el.setAttribute(item[0], item[1]);
     }
     parent.appendChild(el);
@@ -58,10 +71,9 @@ export default class Utils {
   }
 
   /**
-   * addEventListener wrapper
+   * Enter event listner wrapper
    *
    * @param {Element|Window} target Target Element
-   * @param {string} type Event name to bind to
    * @param {Function} callback Event callback
    * @param {boolean} [capture] Capture the event
    */
@@ -73,6 +85,9 @@ export default class Utils {
     );
   }
 
+  /**
+   * Generates random color HEX
+   */
   static getRandomColor() {
     let color = "#";
     for (var i = 0; i < 6; i++) {

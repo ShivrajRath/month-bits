@@ -4,13 +4,14 @@
   "description": "A free, simple, low key monthly habit tracker without any distraction. Made with vanilla MVC.",
   "main": "src/App.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "dev": "webpack --watch"
   },
   "author": "ShivrajRath",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1",
     "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0"
   }

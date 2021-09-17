@@ -1,4 +1,3 @@
-import CONSTANTS from "./CONSTANTS";
 import Date from "./models/Date.model";
 import Task from "./models/Task.model";
 import Utils from "./Utils";
