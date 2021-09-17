@@ -23,7 +23,7 @@ export default class View {
     const dates = this.collection.getDates();
     const container = Utils.qs("#container");
     for (const { name, id, color } of tasks) {
-      const taskEl = Utils.appendTextEl(container, name, {
+      const taskEl = Utils.appendTextEl(container, name || "&nbsp;", {
         style: `color: ${color}`,
         class: "task",
         taskId: `${id}`,

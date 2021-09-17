@@ -25,8 +25,8 @@ body {
   background: var(--primary);
   color: var(--secondary);
   min-height: 100vh;
-  -ms-grid-rows: auto calc(100% - 10em) auto;
-      grid-template-rows: auto calc(100% - 10em) auto;
+  -ms-grid-rows: auto calc(100% - 9em) auto;
+      grid-template-rows: auto calc(100% - 9em) auto;
 }
 
 .bold {
@@ -66,6 +66,7 @@ article {
   -ms-grid-column-align: center;
       justify-self: center;
   margin: 2rem;
+  font-size: 0.825rem;
 }
 
 .grid {
@@ -117,6 +118,9 @@ article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 1rem 0 2rem 0;
 }
 
@@ -125,8 +129,8 @@ article {
   margin-right: 0.25rem;
 }
 
-.cta-section * {
-  margin-right: 2rem;
+.cta-section a {
+  margin-left: 1rem;
 }
 
 .cta-section a {
@@ -144,7 +148,7 @@ input[type="button"] {
 
 footer {
   background-color: aliceblue;
-  margin: 1rem 0;
+  margin-top: 1rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -154,6 +158,29 @@ footer {
   justify-items: center;
   font-size: 0.825rem;
   height: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    max-width: 100%;
+    overflow: scroll;
+  }
+  .grid {
+    border: none;
+  }
+  .cta-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cta-section a {
+    margin-right: 1rem;
+    margin-left: 0;
+  }
+  .cta-section > div {
+    margin-top: 1rem;
+  }
 }
 
 @media print {

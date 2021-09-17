@@ -2,14 +2,9 @@
 
 ## Features
 
-1. Editable task name
-2. Limit tasks to some number
-3. Delete a task
-4. Clear button to clear entries
-5. Print View
-6. Mobile View
-7. Cleaner way to add habits and clear habits instead of buttons
-8. Deletion of task, needs to reset everything
+- Mobile View
+- Give max-width to wrapper
+- SEO content
 
 ## Build:
 
@@ -30,3 +25,5 @@
 ## Code
 
 Use ES6 Proxy for collection change monitoring
+
+## Future

@@ -21,7 +21,7 @@ body {
   background: var(--primary);
   color: var(--secondary);
   min-height: 100vh;
-  grid-template-rows: auto calc(100% - 10em) auto;
+  grid-template-rows: auto calc(100% - 9em) auto;
 }
 
 .bold {
@@ -52,6 +52,7 @@ header {
 article {
   justify-self: center;
   margin: 2rem;
+  font-size: 0.825rem;
 }
 
 .grid {
@@ -86,13 +87,14 @@ article {
 
 .cta-section {
   display: flex;
+  justify-content: space-between;
   margin: 1rem 0 2rem 0;
   input {
     width: 10rem;
     margin-right: 0.25rem;
   }
-  * {
-    margin-right: 2rem;
+  a {
+    margin-left: 1rem;
   }
   a {
     text-decoration: none;
@@ -110,7 +112,7 @@ input[type="button"] {
 
 footer {
   background-color: aliceblue;
-  margin: 1rem 0;
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 1rem;
@@ -118,6 +120,26 @@ footer {
   justify-items: center;
   font-size: 0.825rem;
   height: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    max-width: 100%;
+    overflow: scroll;
+  }
+  .grid {
+    border: none;
+  }
+  .cta-section {
+    flex-direction: column;
+    a {
+      margin-right: 1rem;
+      margin-left: 0;
+    }
+    > div {
+      margin-top: 1rem;
+    }
+  }
 }
 
 @media print {

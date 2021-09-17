@@ -16,21 +16,27 @@
 
 <body>
   <header>
-    <b>#month-bits</b>
+    <b>#month-bits (Monthly Habits)</b>
   </header>
   <div class="wrapper">
     <article class="invisible-print">
-      A simple and free monthly habit tool without any need of logins, no tracking, completely private. Print this page
+      A free, simple monthly habit tool without any need of logins, no tracking, completely private. Print this page
       to work offline.
     </article>
     <main>
       <div class="grid" id="container">
       </div>
       <div class="cta-section hide-print">
-        <input type="text" name="add-a-task" id="add-a-task-input" placeholder="Name for the habit" autocomplete="off">
-        <a href="" id="add-a-task">Add a new habit</a>
-        <a href="" id="clear">Clear all entries</a>
-        <a href="" id="reset">Reset all entries</a>
+        <div>
+          <input type="text" name="add-a-task" id="add-a-task-input" placeholder="Name for the habit"
+            autocomplete="off">
+          <a href="javascript:void(0)" id="add-a-task">Add a new habit</a>
+        </div>
+        <div>
+          <a href="javascript:void(0)" id="clear">Clear all habit entries</a>
+          <a href="javascript:void(0)" id="reset">RESET!!</a>
+          <a href="javascript:void(0)" onclick="print();">Print</a>
+        </div>
       </div>
     </main>
   </div>
