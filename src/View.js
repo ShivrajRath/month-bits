@@ -1,3 +1,4 @@
+import constants from "./constants";
 import Utils from "./Utils";
 
 export default class View {
@@ -9,7 +10,7 @@ export default class View {
     const dates = this.collection.getDates();
     const container = Utils.qs("#container");
 
-    Utils.appendTextEl(container, "Habits", {
+    Utils.appendTextEl(container, constants.firstCellLabel, {
       class: "bold",
     });
 
