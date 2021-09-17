@@ -123,9 +123,17 @@ article {
   margin: 1rem 0 2rem 0;
 }
 
+.cta-section div:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .cta-section input {
   width: 10rem;
   margin-right: 0.25rem;
+  border: 1px solid var(--secondary);
+  padding: 2px;
 }
 
 .cta-section a {
@@ -183,6 +191,10 @@ footer {
 }
 
 @media print {
+  @page {
+    size: landscape;
+    margin: 0;
+  }
   .hide-print {
     display: none;
   }

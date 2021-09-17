@@ -89,9 +89,14 @@ article {
   display: flex;
   justify-content: space-between;
   margin: 1rem 0 2rem 0;
+  div:nth-child(1) {
+    display: flex;
+  }
   input {
     width: 10rem;
     margin-right: 0.25rem;
+    border: 1px solid var(--secondary);
+    padding: 2px;
   }
   a {
     margin-left: 1rem;
@@ -143,6 +148,10 @@ footer {
 }
 
 @media print {
+  @page {
+    size: landscape;
+    margin: 0;
+  }
   .hide-print {
     display: none;
   }
