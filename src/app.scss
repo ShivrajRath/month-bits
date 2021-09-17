@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   line-height: 1.25;
-  align-items: flex-start;
 }
 
 :root {
@@ -47,6 +46,7 @@ header {
 .wrapper {
   margin: 0 1.5rem;
   display: grid;
+  align-content: flex-start;
 }
 
 article {
