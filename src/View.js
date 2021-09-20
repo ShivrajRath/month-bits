@@ -1,5 +1,6 @@
 import constants from "./constants";
 import Utils from "./Utils";
+import "./app.scss";
 
 export default class View {
   constructor(collection) {
