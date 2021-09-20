@@ -3,7 +3,6 @@
 ## Build:
 
 4. Eslint
-5. Generate SW file to include hashed files
 
 ## Others
 

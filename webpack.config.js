@@ -1,6 +1,7 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const HTMLMinimizerPlugin = require("html-minimizer-webpack-plugin");
+const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -11,6 +12,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: "index.html",
     }),
+    new WorkboxPlugin.GenerateSW(),
   ],
   module: {
     rules: [
