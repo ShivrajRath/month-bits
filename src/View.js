@@ -1,4 +1,4 @@
-import constants from "./constants";
+import constants from "./CONSTANTS";
 import Utils from "./Utils";
 import "./app.scss";
 
