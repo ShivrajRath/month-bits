@@ -9,6 +9,7 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
+      scriptLoading: "blocking",
       template: "index.html",
     }),
   ],
