@@ -1,14 +1,6 @@
 # TODO
 
-## Build:
-
-4. Eslint
-
-## Others
-
-1. Test cases
-2. Coverage
-
-## CI/CD
-
-1. Github actions
+1. Eslint
+2. Test cases
+3. Coverage
+4. Service worker not working
