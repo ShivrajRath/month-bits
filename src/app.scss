@@ -57,7 +57,7 @@ article {
 
 .grid {
   display: grid;
-  grid-template-columns: 10rem repeat(31, 1fr);
+  grid-template-columns: 10rem repeat(31, minmax(37px, 1fr));
   border: 0.5px solid var(--secondary);
   > div {
     padding: 0.5rem;
@@ -89,9 +89,6 @@ article {
   display: flex;
   justify-content: space-between;
   margin: 1rem 0 2rem 0;
-  div:nth-child(1) {
-    display: flex;
-  }
   input {
     width: 10rem;
     margin-right: 0.25rem;
@@ -137,12 +134,26 @@ footer {
   }
   .cta-section {
     flex-direction: column;
+
     a {
       margin-right: 1rem;
       margin-left: 0;
     }
     > div {
       margin-top: 1rem;
+      display: flex;
+      &:nth-child(1) {
+        input {
+          flex-grow: 1;
+        }
+      }
+      &:nth-child(2) {
+        flex-direction: column;
+        a {
+          text-align: center;
+          margin-top: 1rem;
+        }
+      }
     }
   }
 }
