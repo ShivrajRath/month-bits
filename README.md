@@ -1,3 +1,5 @@
+[![Build Status](https://github.com/ShivrajRath/month-bits/actions/workflows/build-deploy.yml/badge.svg)](https://github.com/ShivrajRath/month-bits/actions)
+
 # Month-Bits
 
 A free, simple, low key monthly habit tracker without any distraction. Made with vanilla MVC.
