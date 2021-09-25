@@ -27,15 +27,42 @@ describe("month-bits", () => {
     const element = await expect(page).toMatchElement("#container > div.task");
     await expect(element).toMatch(/task1/gi);
   });
+  test("should select habit entries", async () => {
+    await expect(page).toClick("#container > div:nth-child(34)");
+    const task1date1 = await page.$("#container > div:nth-child(34)");
+    expect(
+      await task1date1.evaluate((node) => node.getAttribute("aria-checked"))
+    ).toBe("true");
+  });
+  test("should unselect habit entries", async () => {
+    await expect(page).toClick("#container > div:nth-child(34)");
+    const task1date1 = await page.$("#container > div:nth-child(34)");
+    expect(
+      await task1date1.evaluate((node) => node.getAttribute("aria-checked"))
+    ).toBe("false");
+  });
   test("should delete the habit", async () => {
     await expect(page).toClick(".delete-task");
     await expect(page).not.toMatchElement("#container > div.task");
   });
-  test("should completely reset", async () => {
+  test("should clear habit entries", async () => {
     await expect(page).toFill("#add-a-task-input", "task1");
     await expect(page).toClick("#add-a-task");
     await expect(page).toFill("#add-a-task-input", "task2");
     await expect(page).toClick("#add-a-task");
+    await expect(page).toClick("#container > div:nth-child(34)");
+    await expect(page).toClick("#container > div:nth-child(68)");
+    await expect(page).toClick("#clear");
+    const task1date1 = await page.$("#container > div:nth-child(34)");
+    expect(
+      await task1date1.evaluate((node) => node.getAttribute("aria-checked"))
+    ).toBe("false");
+    const task2date2 = await page.$("#container > div:nth-child(68)");
+    expect(
+      await task2date2.evaluate((node) => node.getAttribute("aria-checked"))
+    ).toBe("false");
+  });
+  test("should completely reset", async () => {
     await expect(page).toClick("#reset");
     await page.goto(PATH, { waitUntil: "load" });
     await expect(page).not.toMatchElement("#container > div.task");
